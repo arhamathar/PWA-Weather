@@ -35,43 +35,45 @@ html, body, #root {
     padding: 40px 8%;
     border-radius: 20px;
     background: rgba(250, 250, 250, 0.85);
-    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.35);
 }
 
 p {
-    margin-top: 10px;
+    margin-top: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 5px;
+    font-size: 2.25rem;
 }
 
 .city-temp {
     font-size: 5rem;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 1rem;
     color: #1e2432;
     text-align: center;
 }
 
 .city sup {
-    font-size: 0.5em;
+    font-size: 1.75rem;
 }
 
 .city-name {
-    font-size: 2em;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 .city-name sup {
-    padding: 0.2em 0.6em;
-    margin-left: 0.2em;
+    padding: 0.2rem 0.6rem;
+    margin-left: 0.2rem;
     border-radius: 30px;
     color: #fff;
     background: #ff8c00;
+    letter-spacing: 2px;
 }
 
 .city-icon {
-    margin-top: 10px;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
 }
 
 .info {
