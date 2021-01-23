@@ -13,6 +13,18 @@ self.addEventListener('install', (event) => {
     )
 });
 
-self.addEventListener('fetch', (event) => { });
+self.addEventListener('fetch', (event) => {
+    console.log("[Service Worker] Fetch", event);
+    event.waitUntill(
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                } else {
+                    return fetch(event.request);
+                }
+            })
+    )
+});
 
 self.addEventListener('activate', (event) => { });
