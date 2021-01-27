@@ -1,5 +1,5 @@
 const self = this;
-const CACHE_NAME = 'weather';
+const CACHE_NAME = 'weather-v1';
 const urlsToCache = ['index.html', 'offline.html'];
 
 self.addEventListener('install', (event) => {
@@ -27,4 +27,16 @@ self.addEventListener('fetch', (event) => {
     )
 });
 
-self.addEventListener('activate', (event) => { });
+self.addEventListener('activate', (event) => {
+    event.waitUntill(
+        caches.keys()
+            .then((keyList) => {
+                return Promise.all(keyList.map(key => {
+                    if (key !== CACHE_NAME) {
+                        console.log("Removing old cache.", key);
+                        return caches.delete(key);
+                    }
+                }))
+            })
+    );
+});
