@@ -1,10 +1,10 @@
 const self = this;
-const CACHE_NAME = 'weather-v1';
+const CACHE_NAME = 'weather-v2';
 const urlsToCache = ['index.html', 'offline.html'];
 
 self.addEventListener('install', (event) => {
     console.log("[Service Worker] Install", event);
-    event.waitUntill(
+    event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
                 console.log("Open Cache");
@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('fetch', (event) => {
     console.log("[Service Worker] Fetch", event);
-    event.waitUntill(
+    event.waitUntil(
         caches.match(event.request)
             .then(response => {
                 if (response) {
@@ -28,7 +28,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-    event.waitUntill(
+    event.waitUntil(
         caches.keys()
             .then((keyList) => {
                 return Promise.all(keyList.map(key => {
