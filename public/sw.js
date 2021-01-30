@@ -1,6 +1,13 @@
 const self = this;
-const CACHE_NAME = 'weather-v2';
-const urlsToCache = ['index.html', 'offline.html'];
+const CACHE_NAME = 'weather-v4';
+const urlsToCache = [
+    '/',
+    '/index.html',
+    '/static/js/bundle.js',
+    '/static/js/0.chunk.js',
+    '/static/js/main.chunk.js',
+    'static/media/weather-bg.d6195316.jpg'
+];
 
 self.addEventListener('install', (event) => {
     console.log("[Service Worker] Install", event);
@@ -14,11 +21,12 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    console.log("[Service Worker] Fetch", event);
-    event.waitUntil(
+    // console.log("[Service Worker] Fetch", event);
+    event.respondWith(
         caches.match(event.request)
             .then(response => {
                 if (response) {
+                    console.log(response);
                     return response;
                 } else {
                     return fetch(event.request);

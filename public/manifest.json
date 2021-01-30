@@ -1,7 +1,7 @@
 {
     "name": "Pwa Weather App",
     "short_name": "Weather App",
-    "start_url": "./index.html",
+    "start_url": ".",
     "description": "A beautiful progressive weather app to search weather of a place.",
     "display": "standalone",
     "orientation": "portrait-primary",

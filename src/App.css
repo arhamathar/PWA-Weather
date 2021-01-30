@@ -7,7 +7,8 @@ html, body, #root {
 }
 
 .main-container {
-    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5) ), url('./assets/weather-bg-min.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5) ), 
+    url('./assets/weather-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 100%;
