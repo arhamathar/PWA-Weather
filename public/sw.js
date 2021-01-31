@@ -1,11 +1,11 @@
 const self = this;
-const CACHE_NAME = 'weather-v7.1';
+const CACHE_NAME = 'weather-v7.2';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/static/js/bundle.js',
-    '/static/js/0.chunk.js',
-    '/static/js/main.chunk.js',
+    '/static/js/2.c659c359.chunk.js',
+    '/static/js/main.bf22e75d.chunk.js',
+    '/static/css/main.2a7442a2.chunk.css',
     './images/weather.png'
 ];
 
