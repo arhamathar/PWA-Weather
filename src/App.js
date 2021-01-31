@@ -16,7 +16,6 @@ function App() {
             setDateInfo(dateInfo);
             setWeather(data.responseData);
             setCity('');
-            console.log(data.responseData);
         }
     }
 

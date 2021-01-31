@@ -1,12 +1,11 @@
 const self = this;
-const CACHE_NAME = 'weather-v6.5';
+const CACHE_NAME = 'weather-v6.9';
 const urlsToCache = [
     '/',
     '/index.html',
     '/static/js/bundle.js',
     '/static/js/0.chunk.js',
     '/static/js/main.chunk.js',
-    'static/media/weather-bg.d6195316.jpg'
 ];
 
 self.addEventListener('install', (event) => {
