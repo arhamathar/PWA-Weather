@@ -28,12 +28,39 @@ html, body, #root {
     font-size: 2rem;
 }
 
+.weather-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.extra-info{
+    background-color: red;
+}
+
+.extra-info__heading{
+    font-size: 2rem;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.extra-info__name{
+    margin: 0 2rem;
+}
+
+.extra-info__value{
+    font-weight: bold;
+}
+
 .city {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 40px 8%;
+    min-width: 22rem;
+    margin: 0 1rem;
+    padding: 0 7%;
     border-radius: 20px;
     background: rgba(250, 250, 250, 0.85);
     box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.35);
@@ -84,11 +111,11 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-    /* .search {
-        padding: 1rem 2rem ;
-    } */
+    .weather-info{
+        flex-direction: column;
+    }
 
     .city {
-        padding: 40px 20%;
+        margin: 1rem 0;
     }
 }
