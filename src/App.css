@@ -34,14 +34,14 @@ html, body, #root {
     align-items: center;
 }
 
-.extra-info{
-    background-color: red;
-}
-
 .extra-info__heading{
     font-size: 2rem;
     margin: 0.5rem 0;
     width: 100%;
+}
+
+.extra-info__heading:last-child{
+    margin-bottom: 4rem;
 }
 
 .extra-info__name{
@@ -67,7 +67,7 @@ html, body, #root {
 }
 
 p {
-    margin-top: 1rem;
+    margin-top: 0;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 2.25rem;
@@ -76,7 +76,6 @@ p {
 .city-temp {
     font-size: 5rem;
     font-weight: bold;
-    margin-top: 1rem;
     color: #1e2432;
     text-align: center;
 }
@@ -88,6 +87,7 @@ p {
 .city-name {
     font-size: 3rem;
     letter-spacing: 2px;
+    margin-bottom: 1rem;
 }
 
 .city-name sup {
@@ -104,10 +104,30 @@ p {
     height: 10rem;
 }
 
+.extra-info{
+    padding: 0 7%;
+}
+
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.date{
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff8c00;
+    text-align: left;
+    width: 100%;
+    margin: 2rem 0 1rem;
+}
+
+.date div{
+    font-size: 2rem;
+    color: #2c2c2c;
+    margin: 1rem 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -117,5 +137,15 @@ p {
 
     .city {
         margin: 1rem 0;
+    }
+    .city-name{
+        font-size: 2.5rem;
+    }
+    .city-temp{
+        font-size: 4rem;
+    }
+    .city-icon{
+        width: 8rem;
+        height: 8rem;
     }
 }

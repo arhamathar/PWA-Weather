@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 
+import ExtraInfo from './components/ExtraInfo';
+import { getDate } from './utils/getDate';
 import { fetchWeather } from './utils/fetchWeather';
 import './App.css';
-import ExtraInfo from './components/ExtraInfo';
 
 function App() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState({});
-
+    const [dateInfo, setDateInfo] = useState();
     const onSearchHandler = async (e) => {
         if (e.key === "Enter") {
             const data = await fetchWeather(city);
+            const dateInfo = getDate();
+            setDateInfo(dateInfo);
             setWeather(data.responseData);
             setCity('');
             console.log(data.responseData);
@@ -49,6 +52,10 @@ function App() {
                         </div>
                     </div>
                     <div className="city extra-info">
+                        <div className="date">
+                            {dateInfo.day}<br />
+                            <div>{dateInfo.dateString}</div>
+                        </div>
                         <ExtraInfo title="Humidity :-" value={weather.main.humidity} unit="%" />
                         <ExtraInfo title="Feels Like :-" value={weather.main.feels_like} unit="C" />
                         <ExtraInfo title="Wind :-" value={weather.wind.speed} unit="km/h" />
