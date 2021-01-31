@@ -1,5 +1,5 @@
 const self = this;
-const CACHE_NAME = 'weather-v4';
+const CACHE_NAME = 'weather-v5.3';
 const urlsToCache = [
     '/',
     '/index.html',

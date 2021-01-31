@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { fetchWeather } from './utils/fetchWeather';
 import './App.css';
+import ExtraInfo from './components/ExtraInfo';
 
 function App() {
     const [city, setCity] = useState('');
@@ -48,22 +49,10 @@ function App() {
                         </div>
                     </div>
                     <div className="city extra-info">
-                        <div className="extra-info__heading">
-                            <span className="extra-info__name">Feels Like:</span>
-                            <span className="extra-info__value">{weather.main.feels_like} C</span>
-                        </div>
-                        <div className="extra-info__heading">
-                            <span>Humidity:</span>
-                            <span className="extra-info__value">{weather.main.humidity} %</span>
-                        </div>
-                        <div className="extra-info__heading">
-                            <span>Pressure:</span>
-                            <span className="extra-info__value">{weather.main.pressure} </span>
-                        </div>
-                        <div className="extra-info__heading">
-                            <span>Wind:</span>
-                            <span className="extra-info__value">{weather.wind.speed} km/h</span>
-                        </div>
+                        <ExtraInfo title="Humidity :-" value={weather.main.humidity} unit="%" />
+                        <ExtraInfo title="Feels Like :-" value={weather.main.feels_like} unit="C" />
+                        <ExtraInfo title="Wind :-" value={weather.wind.speed} unit="km/h" />
+                        <ExtraInfo title="Pressure :-" value={weather.main.pressure} unit="mbar" />
                     </div>
                 </div>
             )}

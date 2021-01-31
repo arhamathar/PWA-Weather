@@ -40,17 +40,17 @@ html, body, #root {
 
 .extra-info__heading{
     font-size: 2rem;
-    margin: 0.5rem auto;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 0.5rem 0;
+    width: 100%;
 }
 
 .extra-info__name{
-    margin: 0 2rem;
+    text-align: left;
 }
 
 .extra-info__value{
     font-weight: bold;
+    float: right;
 }
 
 .city {
