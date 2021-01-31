@@ -1,11 +1,12 @@
 const self = this;
-const CACHE_NAME = 'weather-v6.9';
+const CACHE_NAME = 'weather-v7.0';
 const urlsToCache = [
     '/',
     '/index.html',
     '/static/js/bundle.js',
     '/static/js/0.chunk.js',
     '/static/js/main.chunk.js',
+    './images/weather.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -37,6 +38,7 @@ self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys()
             .then((keyList) => {
+                // eslint-disable-next-line array-callback-return
                 return Promise.all(keyList.map(key => {
                     if (key !== CACHE_NAME) {
                         console.log("Removing old cache.", key);
